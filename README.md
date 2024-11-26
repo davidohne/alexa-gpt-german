@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Note: This repository is based entirely on the fabulous work of @k4l1sh. I've only added German stop intents and German responses to the lambda function.
+
 Boost your Alexa by making it respond as ChatGPT.
 
 This repository contains a tutorial on how to create a simple Alexa skill that uses the OpenAI API to generate responses from the ChatGPT model.
