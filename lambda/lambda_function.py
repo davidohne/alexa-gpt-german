@@ -9,7 +9,7 @@ import logging
 import json
 
 # Set your OpenAI API key
-api_key = "YOUR_API_KEY"
+api_key = "YOUR_OPEN_AI_KEY"
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -23,7 +23,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Chat G.P.T. mode activated"
+        speak_output = "Chat dschi-pi-ti Modus aktiviert"
 
         session_attr = handler_input.attributes_manager.session_attributes
         session_attr["chat_history"] = []
@@ -68,7 +68,7 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speak_output = "Sorry, I had trouble doing what you asked. Please try again."
+        speak_output = "Es tut mir leid, ich hatte Probleme mit Ihrer Anfrage. Bitte versuchen Sie es noch einmal."
 
         return (
             handler_input.response_builder
@@ -86,7 +86,7 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Leaving Chat G.P.T. mode"
+        speak_output = "Verlasse Chat dschi-pi-ti Modus"
 
         return (
             handler_input.response_builder
@@ -101,7 +101,7 @@ def generate_gpt_response(chat_history, new_question):
         "Content-Type": "application/json"
     }
     url = "https://api.openai.com/v1/chat/completions"
-    messages = [{"role": "system", "content": "You are a helpful assistant. Answer in 50 words or less."}]
+    messages = [{"role": "system", "content": "Sie sind ein hilfreicher Assistent. Antworten Sie in 50 Wörtern oder weniger."}]
     for question, answer in chat_history[-10:]:
         messages.append({"role": "user", "content": question})
         messages.append({"role": "assistant", "content": answer})
