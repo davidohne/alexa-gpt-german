@@ -25,7 +25,12 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": []
+                    "samples": [
+                        "ciao",
+                        "tschüss",
+                        "werde wieder normal",
+                        "ciao chat dschi-pi-ti"
+                    ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
